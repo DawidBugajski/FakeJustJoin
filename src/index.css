@@ -1,13 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'League Spartan', sans-serif;
+}
+.font-500 {
+  font-weight: 500;
+}
+.font-700 {
+  font-weight: 700;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.logo-mobile {
+  position: absolute;
+  inset: 0;
+  scale: 0.5;
+  transform: translate(0%, -100%);
+}
+
+.filterable-btn {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  padding: 0px 8px 0px 4px;
+}
+.filterable-btn-delete {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  padding: 0px 4px;
+  margin-right: 10px;
 }
