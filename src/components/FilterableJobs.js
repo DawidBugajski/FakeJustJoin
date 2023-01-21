@@ -10,9 +10,6 @@ export default function FilterableJobs() {
       <div className='flex flex-wrap'>
         <DeleteCategoryButton />
         <DeleteCategoryButton />
-        <DeleteCategoryButton />
-        <DeleteCategoryButton />
-        <DeleteCategoryButton />
       </div>
       <span>Clear</span>
     </div>
