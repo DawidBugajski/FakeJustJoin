@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function DeleteCategoryButton({ setFilters }) {
+export default function DeleteCategoryButton({ filter }) {
   const handleDeleteCategory = () => console.log('REMOVE');
 
   return (
     <div className='flex text-md mt-[7px] mb-[7px]'>
-      <span className='filterable-btn bg-gray-200'>Frontend</span>
+      <span className='filterable-btn bg-gray-200'>{filter}</span>
       <button
         onClick={handleDeleteCategory}
         className='filterable-btn-delete bg-primary-color hover:bg-green-hover'

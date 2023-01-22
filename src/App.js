@@ -5,13 +5,18 @@ import JobItemsList from './components/JobItemsList';
 import FilterableJobs from './components/FilterableJobs';
 
 export default function App() {
+  // generate job offers
   const [data, setData] = useState([]);
 
   //show filters
   const [showFilters, setShowFilters] = useState(false);
-  const handleShowFilters = () => {
-    console.log('ADD BUTTON WHICH WAS CLICKED FROM JOB');
+
+  const [filter, setFilter] = useState([]);
+
+  const handleShowFilters = (text) => {
     setShowFilters(true);
+    setFilter([...filter, text.target.innerHTML]);
+    console.log(filter);
   };
 
   //fetch data and update state TODO: change on react query
@@ -29,10 +34,15 @@ export default function App() {
         src='/images/bg-header-mobile.svg'
         alt='waves'
       />
-      {showFilters === true && <FilterableJobs />}
+      {showFilters === true && (
+        <FilterableJobs handleShowFilters={handleShowFilters} filter={filter} />
+      )}
       <JobItemsList data={data} handleShowFilters={handleShowFilters} />
     </div>
   );
 }
 
-// coś jest nie tak z pokazaniem tego jebanego diva, bo button nie ma ustawionego on click, ale nie mogę ustawić na komponent on click, a z kolei w przycisku nie mam dostępu do danych
+/*
+ - After Click on Job Category generate DeleteButton
+ może na handleShowFilter po kliknięciu będę aktualizował state nowy ten state przekażę w propsie do tamtego komponentu i będę po nim robił map?
+*/

@@ -23,7 +23,7 @@ body {
 .filterable-btn {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
-  padding: 0px 8px 0px 4px;
+  padding: 3px 8px 0px 4px;
 }
 .filterable-btn-delete {
   border-top-right-radius: 3px;

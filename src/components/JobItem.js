@@ -2,9 +2,7 @@ import React from 'react';
 import JobItemRoles from './JobItemRoles';
 import { GoPrimitiveDot } from 'react-icons/go';
 
-export default function JobItem({ job, handleShowFilters, setFilters }) {
-  const handleAddFilter = () => console.log('h');
-
+export default function JobItem({ job, handleShowFilters }) {
   return (
     <div
       className={`mx-auto w-10/12 relative mt-12 mb-12 bg-white px-6 pt-5 pb-1 rounded-lg shadow-md ${
@@ -49,8 +47,6 @@ export default function JobItem({ job, handleShowFilters, setFilters }) {
         tools={job.tools}
         level={job.level}
         handleShowFilters={handleShowFilters}
-        setFilters={setFilters}
-        onClick={handleAddFilter}
       />
     </div>
   );
