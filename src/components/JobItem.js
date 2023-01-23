@@ -2,7 +2,33 @@ import React from 'react';
 import JobItemRoles from './JobItemRoles';
 import { GoPrimitiveDot } from 'react-icons/go';
 
-export default function JobItem({ job, handleShowFilters }) {
+export default function JobItem({
+  job,
+  handleShowFilters,
+  setFilters,
+  filters,
+  setShowFilters,
+}) {
+  const handleAddFilter = (e) => {
+    const splitPhrase = e.target.innerHTML.split(' ');
+    const jobRequirements = [
+      job.role,
+      job.languages,
+      job.tools,
+      job.level,
+    ].flat();
+
+    let addToFilters = [];
+
+    splitPhrase.forEach((word) => {
+      if (jobRequirements.includes(word) && !filters.includes(word)) {
+        addToFilters = [...addToFilters, word];
+      }
+      setShowFilters(true);
+      setFilters([...filters, ...addToFilters]);
+    });
+  };
+
   return (
     <div
       className={`mx-auto w-10/12 relative mt-12 mb-12 bg-white px-6 pt-5 pb-1 rounded-lg shadow-md ${
@@ -28,7 +54,7 @@ export default function JobItem({ job, handleShowFilters }) {
         )}
       </div>
       <p
-        onClick={handleShowFilters}
+        onClick={handleAddFilter}
         className='text-sm font-bold text-green-hover my-2 cursor-pointer hover:text-primary-color'
       >
         {job.position}

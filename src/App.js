@@ -5,21 +5,23 @@ import JobItemsList from './components/JobItemsList';
 import FilterableJobs from './components/FilterableJobs';
 
 export default function App() {
-  // generate job offers
   const [data, setData] = useState([]);
-
-  //show filters
   const [showFilters, setShowFilters] = useState(false);
+  const [filters, setFilters] = useState([]);
 
-  const [filter, setFilter] = useState([]);
-
-  const handleShowFilters = (text) => {
+  const handleShowFilters = (e) => {
     setShowFilters(true);
-    setFilter([...filter, text.target.innerHTML]);
-    console.log(filter);
+    !filters.includes(e.target.innerHTML) &&
+      setFilters([...filters, e.target.innerHTML]);
   };
 
-  //fetch data and update state TODO: change on react query
+  const handleDeleteFilter = (text) => {
+    const newFilter = filters.filter((item) => item !== text);
+    setFilters(newFilter);
+    newFilter.length < 1 && setShowFilters(false);
+  };
+
+  // TODO => change on react query
   useEffect(() => {
     axios
       .get('https://demo1940091.mockable.io')
@@ -28,21 +30,43 @@ export default function App() {
   }, []);
 
   return (
-    <div className='bg-primary-bg pb-10'>
+    <div className='bg-primary-bg pb-10 h-screen overflow-auto'>
       <img
         className='w-full h-[150px] bg-repeat-x bg-primary-color mb-8'
         src='/images/bg-header-mobile.svg'
         alt='waves'
       />
       {showFilters === true && (
-        <FilterableJobs handleShowFilters={handleShowFilters} filter={filter} />
+        <FilterableJobs
+          handleDeleteFilter={handleDeleteFilter}
+          filters={filters}
+          setFilters={setFilters}
+          setShowFilters={setShowFilters}
+        />
       )}
-      <JobItemsList data={data} handleShowFilters={handleShowFilters} />
+      <JobItemsList
+        data={data}
+        handleShowFilters={handleShowFilters}
+        filters={filters}
+        setFilters={setFilters}
+        setShowFilters={setShowFilters}
+      />
     </div>
   );
 }
 
 /*
- - After Click on Job Category generate DeleteButton
- może na handleShowFilter po kliknięciu będę aktualizował state nowy ten state przekażę w propsie do tamtego komponentu i będę po nim robił map?
+ - After Click on Job Category generate DeleteButton [✅]
+  - Make function that provides from generating same names [✅]
+  - After clicking on "X" delete from state [✅]
+  - Make function that will clear all from state [✅]
+  - Click on senior frontend developer => generate senior, frontend IF IS NOT ALREADY, if part is already on filterable, [✅]
+  TODO FILTERING [✅]
+
+*NICE TO HAVE:
+- stylize for full rwd [🥵]
+- after click on filterbutton from job move user to 1 job offer ( at this height ) [🥵]
+- always render as first featured && new, second new, and then rest (ofc if filters are  correct [🥵]
+- use React Query instead of useEffect [🥵]
+- some error handling? [🥵]
 */
