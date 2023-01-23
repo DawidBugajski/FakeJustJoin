@@ -9,7 +9,7 @@ export default function JobItemRoles({
   handleShowFilters,
 }) {
   return (
-    <div className='flex flex-wrap'>
+    <div className='flex flex-wrap md:justify-end md:mt-2 min-[900px]:basis-1/2 lg:basis-[60%]'>
       <JobItemFilterButton text={roles} handleShowFilters={handleShowFilters} />
       <JobItemFilterButton text={level} handleShowFilters={handleShowFilters} />
       {languages &&

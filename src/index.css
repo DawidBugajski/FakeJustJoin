@@ -31,3 +31,26 @@ body {
   padding: 0px 4px;
   margin-right: 10px;
 }
+
+@media (min-width: 768px) {
+  .logo-mobile {
+    scale: 1;
+    position: relative;
+    transform: translate(0, 0);
+  }
+}
+
+@media (min-width: 1280px) {
+  .filterable-btn {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 3px 10px 0px 8px;
+    font-size: 18px;
+  }
+  .filterable-btn-delete {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 0px 8px;
+    margin-right: 10px;
+  }
+}

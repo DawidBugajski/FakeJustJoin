@@ -13,7 +13,7 @@ export default function FilterableJobs({
   };
 
   return (
-    <div className='flex justify-between bg-white w-10/12 mx-auto text-primary-color text-center font-bold rounded-lg shadow-lg  py-3 px-4 items-center relative -mt-16'>
+    <div className='flex justify-between bg-white w-10/12 mx-auto text-primary-color text-center font-bold rounded-lg shadow-lg  py-3 px-4 items-center relative -mt-16 xl:w-[65%]'>
       <div className='flex flex-wrap'>
         {filters.map((filter) => (
           <DeleteCategoryButton
