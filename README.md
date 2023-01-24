@@ -72,4 +72,4 @@ In future projects I want to further learn how to use modern react, how to wisel
 ## Author
 
 - Github - [DawidBugajski](https://github.com/DawidBugajski)
-- Frontend Mentor - [DawidBugajski](https://www.linkedin.com/in/dawid-bugajski-1bb01519b/)
+- Linkedin - [DawidBugajski](https://www.linkedin.com/in/dawid-bugajski-1bb01519b/)
