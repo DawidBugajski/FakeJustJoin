@@ -1,5 +1,6 @@
 import React from 'react';
 import DeleteCategoryButton from './DeleteCategoryButton';
+import { motion } from 'framer-motion';
 
 export default function FilterableJobs({
   filters,
@@ -13,7 +14,13 @@ export default function FilterableJobs({
   };
 
   return (
-    <div className='flex justify-between bg-white w-10/12 mx-auto text-primary-color text-center font-bold rounded-lg shadow-lg  py-3 px-4 items-center relative -mt-16 xl:w-[65%]'>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.5 }}
+      transition={{ duration: 0.2 }}
+      className='flex justify-between bg-white w-10/12 mx-auto text-primary-color text-center font-bold rounded-lg shadow-lg  py-3 px-4 items-center relative -mt-16 xl:w-[65%]'
+    >
       <div className='flex flex-wrap'>
         {filters.map((filter) => (
           <DeleteCategoryButton
@@ -29,6 +36,6 @@ export default function FilterableJobs({
       >
         Clear
       </span>
-    </div>
+    </motion.div>
   );
 }
