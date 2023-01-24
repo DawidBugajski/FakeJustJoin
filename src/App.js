@@ -7,7 +7,7 @@ import { AnimatePresence } from 'framer-motion';
 import { useQuery } from 'react-query';
 
 const fetchData = async () => {
-  const response = await axios.get('https://demo1940091.mockable.o');
+  const response = await axios.get('https://demo1940091.mockable.io');
   return response.data;
 };
 
