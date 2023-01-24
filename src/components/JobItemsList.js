@@ -50,20 +50,16 @@ export default function JobItemsList({
   }
   // -1 means that element A should be before element B, and 1 means that element B should be after element A. If objects A and B meet the same condition (e.g., both are labeled "featured" and "new"), then the order is already set and there is no need to use -1 or 1. In the case where the first condition is met for object A and the second for B, then A comes first and B comes second, so -1 for A and 1 for B is used.
 
-  const sortJobs = () => {
-    return filteredData.sort((jobA, jobB) => {
-      if (jobA.featured && jobA.new) return -1;
-      if (jobB.featured && jobB.new) return 1;
-      if (jobA.new) return -1;
-      return 0;
-    });
-  };
-
-  filteredData = sortJobs(filteredData);
+  filteredData.sort((jobA, jobB) => {
+    if (jobA.featured && jobA.new) return -1;
+    if (jobB.featured && jobB.new) return 1;
+    if (jobA.new) return -1;
+    return 0;
+  });
 
   return (
     <div>
-      {filteredData.sort(sortJobs).map((job) => (
+      {filteredData.map((job) => (
         <JobItem
           key={job.id}
           job={job}
