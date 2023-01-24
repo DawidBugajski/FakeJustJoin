@@ -12,7 +12,7 @@ export default function DeleteCategoryButton({ handleDeleteFilter, text }) {
         onClick={handleDeleteCategory}
         className='filterable-btn-delete bg-primary-color hover:bg-green-hover'
       >
-        <img src='/images/icon-remove.svg' alt='icon cross'></img>
+        <img src='./images/icon-remove.svg' alt='icon cross'></img>
       </button>
     </div>
   );

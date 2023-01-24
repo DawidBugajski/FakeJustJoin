@@ -32,12 +32,12 @@ export default function App() {
     <div className='h-screen pb-10 overflow-auto bg-primary-bg'>
       <img
         className='w-full h-[150px] bg-repeat-x bg-primary-color mb-8 md:hidden'
-        src='/images/bg-header-mobile.svg'
+        src='./images/bg-header-mobile.svg'
         alt='waves'
       />
       <img
         className='w-full h-[150px] bg-repeat-x bg-primary-color mb-8 max-md:hidden'
-        src='/images/bg-header-desktop.svg'
+        src='./images/bg-header-desktop.svg'
         alt='waves'
       />
       <AnimatePresence>
