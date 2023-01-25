@@ -31,7 +31,7 @@ Challenges from creators:
 I also added several features by myself:
 
 - I added sorting of job elements, if in the json file another job offer would get the status "featured" and, or "new" it will be sorted so that it is generated first. This is not done "rigidly"
-- I took care of errorhandling, used modern methods such as generating a spinner when data is fetchowanee
+- I took care of error handling, used modern methods such as generating a spinner when data is retrieved
 - Using modern libraries, I added subtle animations on individual components to make the whole application behave more "smoothly."
 
 ### Screenshot
