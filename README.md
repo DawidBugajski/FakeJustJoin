@@ -40,7 +40,7 @@ I also added several features by myself:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://dawidbugajski.github.io/FakeJustJoin/)
+- Live Site URL: [https://dawidbugajski.github.io/FakeJustJoin/](https://dawidbugajski.github.io/FakeJustJoin/)
 
 ## My process
 
