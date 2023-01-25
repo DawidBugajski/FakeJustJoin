@@ -14,7 +14,9 @@ const fetchData = async () => {
 export default function App() {
   const [showFilters, setShowFilters] = useState(false);
   const [filters, setFilters] = useState([]);
-  const { data, status, error } = useQuery('data', fetchData);
+  const { data, status, error } = useQuery('data', fetchData, {
+    refetchOnWindowFocus: false,
+  });
 
   const handleShowFilters = (e) => {
     setShowFilters(true);
